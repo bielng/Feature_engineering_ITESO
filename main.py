@@ -43,3 +43,12 @@ def ecm(a, x, y):
 a_inicial=np.random.rand(2) #valores aleatorios de dimension 2
 solucion = minimize(ecm, a_inicial, args=(df_wine['alcalinity_of_ash'],df_wine['ash']))
 solucion
+
+
+from sklearn.linear_model import linearRegression
+lin=linearRegression
+lin.fit(df_wine[['alcalinity_of_ash']], df_wine['ash'])
+
+
+#que tan bien se ajusto
+lin.score(df_wine[['alcalinity_of_ash']], df_wine['ash'])
